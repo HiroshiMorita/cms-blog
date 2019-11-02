@@ -11,7 +11,7 @@
 
                 <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-lg-12"></div>
+                    <div class="col-lg-12">
                         <h1 class="page-header">
                             Welcome to admin
                             <small>Author</small>
@@ -39,12 +39,12 @@ include "includes/update_categories.php";
                         <div class="col-xs-6">
 
                           <table class="table table-bordered table-hover">
-                            <thread>
+                            <thead>
                               <tr>
                                 <th>ID</th>
                                 <th>Category Title</th>
                               </tr>
-                            </thread>
+                            </thead>
                             <tbody>
 <?php findAllCategories() ?>
 
