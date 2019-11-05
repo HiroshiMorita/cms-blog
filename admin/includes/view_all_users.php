@@ -7,7 +7,6 @@
       <th>Lastname</th>
       <th>Email</th>
       <th>Role</th>
-      <th>Date</th>
     </tr>
   </thead>
   <tbody>
