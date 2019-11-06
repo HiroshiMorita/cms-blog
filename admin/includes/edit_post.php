@@ -29,6 +29,9 @@ if(isset($_GET['p_id'])){
     $post_content = $_POST['post_content'];
 
     move_uploaded_file($post_image_temp, "../images/$post_image");
+
+
+
     if(empty($post_image)) {
       $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
       $select_image = mysqli_query($connection, $query);
@@ -47,7 +50,7 @@ if(isset($_GET['p_id'])){
     $query .= "post_tags   = '{$post_tags}', ";
     $query .= "post_content= '{$post_content}', ";
     $query .= "post_image  = '{$post_image}' "; //カラム情報ここで終わりにつきコンマなし。次はWHEREなのでスペースのみ。
-    $query .= "WHERE post_id = '{$the_post_id}'";
+    $query .= "WHERE post_id = {$the_post_id}";
 
     $update_post = mysqli_query($connection, $query);
     confirmQuery($update_post);

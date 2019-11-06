@@ -25,7 +25,7 @@ if(isset($_POST['create_user'])) {
 <form action="" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
-    <label for="firstname">Firstgname</label>
+    <label for="firstname">Firstname</label>
     <input type="text" class="form-control" name="firstname">
   </div>
 
