@@ -43,9 +43,9 @@ if(isset($_GET['delete'])) {
   while($row = mysqli_fetch_assoc($select_users)) {
     $user_id = $row['user_id'];
     $username = $row['username'];
-    $user_password = $row['password'];
-    $user_firstname = $row['firstname'];
-    $user_lastname = $row['lastname'];
+    $password = $row['password'];
+    $firstname = $row['firstname'];
+    $lastname = $row['lastname'];
     $user_email = $row['user_email'];
     $user_image = $row['user_image'];
     $user_role = $row['user_role'];
@@ -54,7 +54,7 @@ if(isset($_GET['delete'])) {
 
     echo "<td>$user_id</td>";
     echo "<td>$username</td>";
-    echo "<td>$user_firstname</td>";
+    echo "<td>$firstname</td>";
 
     // $query ="SELECT * FROM categories WHERE cat_id = {$post_category_id}";
     //   $select_categories_id = mysqli_query($connection,$query);
@@ -66,7 +66,7 @@ if(isset($_GET['delete'])) {
     // echo "<td>$cat_title</td>";
     //   }
 
-    echo "<td>$user_lastname</td>";
+    echo "<td>$lastname</td>";
     echo "<td>$user_email</td>";
     echo "<td>$user_role</td>";
 
