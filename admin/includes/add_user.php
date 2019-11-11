@@ -17,6 +17,7 @@ if(isset($_POST['create_user'])) {
   $query .= "VALUES('{$firstname}', '{$lastname}', '{$user_role}', '{$username}', '{$user_email}', '{$password}')";
   $create_user_query = mysqli_query($connection, $query);
   confirmQuery($create_user_query);
+  echo "ユーザーを追加しました " . "  " . "<a href='users.php'>ユーザー情報を確認する</a>";
 
 }
 ?>
