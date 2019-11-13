@@ -16,7 +16,8 @@ if(isset($_POST['create_post'])) {
   $query .= "VALUES({$post_category_id}, '{$post_title}', '{$post_author}', now(), '{$post_image}', '{$post_content}', '{$post_tags}', '{$post_status}')";
   $create_post_query = mysqli_query($connection, $query);
   confirmQuery($create_post_query);
-
+  $the_post_id = mysqli_insert_id($connection); //last idを引っぱってくる
+  echo "<p class='bg-success'>記事を作成しました。 <a href='../post.php?p_id={$the_post_id}'>  記事を確認する </a> or <a href='posts.php'> 他の記事を編集する</a></p>";
 }
 ?>
 
@@ -52,8 +53,12 @@ if(isset($_POST['create_post'])) {
   </div>
 
   <div class="form-group">
-    <label for="post_status">Post Status</label>
-    <input type="text" class="form-control" name="post_status">
+    <label for="post_status">Post Status</label><br>
+    <select name="post_status" id="">
+      <option value="draft">Draft</option>
+      <option value="published">Published</option>
+
+    </select>
   </div>
 
   <div class="form-group">

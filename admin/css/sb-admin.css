@@ -222,3 +222,13 @@ ul.alert-dropdown {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+#bulkOptionsContainer {
+    padding: 0;
+    margin-bottom: 12px;
+}
+
+.ck-editor__editable_inline {
+    height: 250px;
+    resize: vertical;
+}
