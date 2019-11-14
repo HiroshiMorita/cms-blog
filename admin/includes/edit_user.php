@@ -32,6 +32,15 @@ if(isset($_POST['edit_user'])) {
   // $post_comment_count = 4;
   // move_uploaded_file($post_image_temp, "../images/$post_image");
 
+  $query = "SELECT randSalt FROM users";
+  $select_randsalt_query = mysqli_query($connection, $query);
+  if(!$select_randsalt_query) {
+    die("Query Failed" . mysqli_error($connection));
+  }
+  $row = mysqli_fetch_array($select_randsalt_query);
+  $salt = $row['randSalt'];
+  $hashed_password = crypt($password, $salt);
+
     //下記本来ワンライナーのところ長くなるので結合させている
     $query = "UPDATE users SET ";
     $query .= "firstname  = '{$firstname}', ";
@@ -39,7 +48,7 @@ if(isset($_POST['edit_user'])) {
     $query .= "user_role = '{$user_role}', ";
     $query .= "username = '{$username}', ";
     $query .= "user_email   = '{$user_email}', ";
-    $query .= "password = '{$password}' ";
+    $query .= "password = '{$hashed_password}' ";
     $query .= "WHERE user_id = {$the_user_id}";
 
     $edit_user_query = mysqli_query($connection, $query);

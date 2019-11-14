@@ -174,7 +174,7 @@ $subscriber_count = mysqli_num_rows($select_all_subscribers);
         var data = google.visualization.arrayToDataTable([
             ['Date', 'Count'],
             <?php
-            $element_text = ['All Post', 'Active Posts', 'Draft Posts', 'Comments', 'Pending Comments', 'Users', 'Subscribers', 'Categories'];
+            $element_text = ['All Post', 'Active Posts', 'Draft Posts', 'Comments', '未承認Comments', 'Users', 'Subscribers', 'Categories'];
             $element_count = [$post_count, $post_published_count, $post_draft_count, $comment_count, $unapproved_comment_count, $user_count, $subscriber_count, $category_count];
             $number_of_element = count($element_text);
             for($i=0; $i<$number_of_element; $i++) {

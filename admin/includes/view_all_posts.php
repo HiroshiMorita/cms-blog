@@ -105,7 +105,7 @@ if(isset($_GET['delete'])) {
     echo "<td>$post_date</td>";
     echo "<td><a href='../post.php?p_id={$post_id}'>View Post</a></td>";
     echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
-    echo "<td><a href='posts.php?delete={$post_id}'>Delete</a></td>";
+    echo "<td><a onClick=\"javascript: return confirm('削除しますか？'); \" href='posts.php?delete={$post_id}'>Delete</a></td>";
     echo "</tr>";
   }
 ?>
