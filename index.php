@@ -3,7 +3,6 @@
 <?php include "includes/navigation.php" ?>
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
 
             <!-- Blog Entries Column -->

@@ -24,21 +24,17 @@ define(strtoupper($key), $value);
 
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-try {
-  $dsn = 'mysql:host=db;dbname=cms-blog;';
-  $db = new PDO($dsn, 'root', 'root');
+// try {
+//   $dsn = 'mysql:host=db;dbname=cms-blog;';
+//   $db = new PDO($dsn, 'root', 'root');
 
-  $sql = 'SELECT version();';
-  $stmt = $db->prepare($sql);
-  $stmt->execute();
-  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  var_dump($result);
-} catch (PDOException $e) {
-  echo $e->getMessage();
-  exit;
-}
-
-// if($connection) {
-//   echo "connected";
+//   $sql = 'SELECT version();';
+//   $stmt = $db->prepare($sql);
+//   $stmt->execute();
+//   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//   var_dump($result);
+// } catch (PDOException $e) {
+//   echo $e->getMessage();
+//   exit;
 // }
 ?>

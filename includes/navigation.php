@@ -35,7 +35,7 @@
                         <a href="registration.php">Registration</a>
                     </li>
                     <?php
-                    if (session_status() === PHP_SESSION_NONE) session_start();
+                    // if (session_status() === PHP_SESSION_NONE) session_start();
                     if(isset($_SESSION['user_role'])) {
                         if(isset($_GET['p_id'])) {
                             $the_post_id = $_GET['p_id'];
