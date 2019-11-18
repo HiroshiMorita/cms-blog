@@ -23,7 +23,7 @@
                 ?>
 
                 <h1 class="page-header">
-                    Page Heading
+                    Page Headingaaaaaa
                     <small>Secondary Text</small>
                 </h1>
 
