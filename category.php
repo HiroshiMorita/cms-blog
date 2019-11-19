@@ -11,10 +11,10 @@
                 <?php
 
                 if(isset($_GET['category'])) {
-                  $post_category_id = $_GET['category'];
+                    $post_category_id = $_GET['category'];
                 }
 
-                $query = "SELECT * FROM posts WHERE post_category_id = $post_category_id";
+                $query = "SELECT * FROM posts WHERE post_category_id = $post_category_id ORDER BY post_id DESC";
                 $select_all_posts_query = mysqli_query($connection, $query);
                 //postsの中の数だけ繰り返す
                 while($row = mysqli_fetch_assoc($select_all_posts_query)) {
@@ -26,30 +26,22 @@
                     $post_content = substr($row['post_content'],0,300)."...";
                 ?>
 
-                <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
-                </h1>
-
-                <!-- First Blog Post -->
-                <h2>
+                <!-- 表示部分 -->
+                <h3>
                     <a href="post.php?p_id=<?php echo $post_id ?>"><?php echo $post_title ?></a>
-                </h2>
-                <p class="lead">
-                    by <a href="index.php"><?php echo $post_author ?></a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span><?php echo $post_date ?></p>
-                <hr>
+                </h3>
+                    <i class="fa fa-user"></i> <a href="index.php"><?php echo $post_author ?>&emsp;</a>
+                <span class="glyphicon glyphicon-time"></span><?php echo $post_date ?><br><br>
+                <a href="post.php?p_id=<?php echo $post_id ?>">
                 <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
-                <hr>
+                </a>
                 <p><?php echo $post_content ?></p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
+                <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                 <hr>
 
                 <?php } ?>
 
-                <!-- Pager -->
+                <!-- ページネーション -->
                 <ul class="pager">
                     <li class="previous">
                         <a href="#">&larr; Older</a>
@@ -61,12 +53,8 @@
 
             </div>
 
-            <!-- Blog Sidebar Widgets Column -->
             <?php include "includes/sidebar.php" ?>
 
         </div>
-        <!-- /.row -->
-
-        <hr>
 
 <?php include "includes/footer.php" ?>

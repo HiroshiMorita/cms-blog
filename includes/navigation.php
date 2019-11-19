@@ -1,6 +1,7 @@
 <!-- ナビゲーションバー -->
-<nav class="navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar-default navbar-fixed-top bg" role="navigation">
         <div class="container">
+
             <!-- 縮小時ハンバーガーメニュー -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -9,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><i class="fa fa-pencil"></i> brain-note </a>
+                <a class="navbar-brand" href="index.php"><i class="fa fa-pencil"></i> Brain Log </a>
             </div>
 
 
@@ -23,13 +24,10 @@
                     //カテゴリーの中の数だけ繰り返す
                     while($row = mysqli_fetch_assoc($select_all_categories_query)) {
                         $cat_title = $row['cat_title'];
-                        echo "<li><a href=''>{$cat_title}</a></li>";
+                        $cat_id = $row['cat_id'];
+                        echo "<li><a href='category.php?category=$cat_id'>{$cat_title}</a></li>";
                     }
                     ?>
-
-                    <li>
-                        <a href="admin">Admin</a>
-                    </li>
 
                     <li>
                         <a href="registration.php">Registration</a>
@@ -37,6 +35,7 @@
                     <?php
                     // if (session_status() === PHP_SESSION_NONE) session_start();
                     if(isset($_SESSION['user_role'])) {
+                        echo "<li><a href='admin'>Admin</a></li>";
                         if(isset($_GET['p_id'])) {
                             $the_post_id = $_GET['p_id'];
                             echo "<li><a href='admin/posts.php?source=edit_post&p_id={$the_post_id}'>Edit Post</a></li>";
@@ -52,3 +51,4 @@
         </div>
         <!-- /.container -->
     </nav>
+<div class="bg">

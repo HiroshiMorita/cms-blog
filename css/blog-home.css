@@ -6,8 +6,24 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-color: #eeeeee;
 }
 
 footer {
     margin: 50px 0;
+}
+
+.login {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1030;
+    max-width: 320px;
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.7));
+}
+
+.bg {
+    filter: none;
 }
