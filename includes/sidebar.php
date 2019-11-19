@@ -1,11 +1,10 @@
 <div class="col-md-4">
 
-<!-- Blog Search Well -->
-<div class="well">
-    <h4>Blog Search</h4>
+<!-- 記事検索 -->
+<div class="">
     <form action="search.php" method="post">
     <div class="input-group">
-        <input name="search" type="text" class="form-control">
+        <input name="search" type="text" placeholder="記事検索" class="form-control">
         <span class="input-group-btn">
             <button name="submit" class="btn btn-default" type="submit">
                 <span class="glyphicon glyphicon-search"></span>
@@ -13,13 +12,12 @@
         </span>
     </div>
     </form>
-    <!-- /.input-group -->
 </div>
+<br>
 
-
-<!-- Login -->
+<!-- ログイン -->
 <div class="well">
-    <h4>ログイン</h4>
+    <h4>LOGIN</h4>
     <form action="includes/login.php" method="post">
     <div class="form-group">
         <input name="username" type="text" class="form-control" placeholder="ユーザー名">
@@ -33,12 +31,11 @@
     </div>
 
     </form>
-    <!-- /.input-group -->
 </div>
 
 
 
-<!-- Blog Categories Well -->
+<!-- カテゴリー -->
 <div class="well">
 
     <?php
@@ -48,7 +45,7 @@
         //カテゴリーの中の数だけ繰り返す
     ?>
 
-    <h4>Blog Categories</h4>
+    <h4>CATEGORY</h4>
     <div class="row">
         <div class="col-lg-12">
             <ul class="list-unstyled">
@@ -63,10 +60,8 @@
         </div>
 
     </div>
-    <!-- /.row -->
 </div>
 
-<!-- Side Widget Well -->
 <?php include "widget.php" ?>
 
 </div>

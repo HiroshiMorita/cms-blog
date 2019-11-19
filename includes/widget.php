@@ -1,4 +1,5 @@
 <div class="well">
-  <h4>Side Widget Well</h4>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+  <h4>隠しコマンド  "admin"</h4>
+  <p>「admin」と入力すると<br>管理画面へのログイン情報入力欄が開きます。</p>
+  <p>ID:test<br>PW:test</p>
 </div>
