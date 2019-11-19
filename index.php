@@ -1,16 +1,14 @@
 <?php include "includes/db.php" ?>
 <?php include "includes/header.php" ?>
 <?php include "includes/navigation.php" ?>
-    <!-- Page Content -->
+
     <div class="container">
         <div class="row">
-
-            <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <?php
-                $query = "SELECT * FROM posts";
+                $query = "SELECT * FROM posts ORDER BY post_id DESC";
                 $select_all_posts_query = mysqli_query($connection, $query);
-                //postsの中の数だけ繰り返す
+                //postsの登録数全て繰り返し
                 while($row = mysqli_fetch_assoc($select_all_posts_query)) {
                     $post_id = $row['post_id'];
                     $post_title = $row['post_title'];
@@ -22,12 +20,7 @@
                     if($post_status == 'published') {
                 ?>
 
-                <h1 class="page-header">
-                    Page Headingaaaaaa
-                    <small>Secondary Text</small>
-                </h1>
-
-                <!-- First Blog Post -->
+                <!-- 表示部分 -->
                 <h2>
                     <a href="post.php?p_id=<?php echo $post_id ?>"><?php echo $post_title ?></a>
                 </h2>
@@ -35,19 +28,17 @@
                     by <a href="index.php"><?php echo $post_author ?></a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span><?php echo $post_date ?></p>
-                <hr>
                 <a href="post.php?p_id=<?php echo $post_id ?>">
                 <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
                 </a>
-                <hr>
                 <p><?php echo $post_content ?></p>
                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
                 <hr>
+                <br>
 
                 <?php }} ?>
 
-                <!-- Pager -->
+                <!-- ページネーション -->
                 <ul class="pager">
                     <li class="previous">
                         <a href="#">&larr; Older</a>
