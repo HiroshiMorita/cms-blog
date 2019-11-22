@@ -2,37 +2,21 @@
 
     <div id="wrapper" class="bg">
 
-
-
-
-        <!-- Navigation -->
         <?php include "includes/admin_navigation.php" ?>
 
         <div id="page-wrapper">
 
             <div class="container-fluid">
 
-                <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12"></div>
-                        <h1 class="page-header">
-                            Welcome to admin
-                            <small><?php echo $_SESSION['username'] ?></small>
-                        </h1>
-                        <!-- <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> テストテストてす
-                            </li>
-                        </ol> -->
+                        <h3 class="page-header">
+                            Dashboard
+                            <small><?php echo $_SESSION['username'] ?>さん</small>
+                        </h3>
                     </div>
                 </div>
-                <!-- /.row -->
 
-
-                <!-- /.row -->
 
                 <div class="row">
     <div class="col-lg-3 col-md-6">
@@ -49,14 +33,13 @@
                             $post_count = mysqli_num_rows($select_all_posts);
                             echo "<div class='huge'>{$post_count}</div>";
                         ?>
-
-                        <div>Posts</div>
+                        <div>投稿</div>
                     </div>
                 </div>
             </div>
             <a href="posts.php">
                 <div class="panel-footer">
-                    <span class="pull-left">View Details</span>
+                    <span class="pull-left">投稿一覧</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
@@ -77,13 +60,13 @@
                         $comment_count = mysqli_num_rows($select_all_comments);
                         echo "<div class='huge'>{$comment_count}</div>";
                     ?>
-                        <div>Comments</div>
+                        <div>コメント</div>
                     </div>
                 </div>
             </div>
             <a href="comments.php">
                 <div class="panel-footer">
-                    <span class="pull-left">View Details</span>
+                    <span class="pull-left">コメント一覧</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
@@ -104,13 +87,13 @@
                             $user_count = mysqli_num_rows($select_all_users);
                             echo "<div class='huge'>{$user_count}</div>";
                         ?>
-                        <div> Users</div>
+                        <div>ユーザー</div>
                     </div>
                 </div>
             </div>
             <a href="users.php">
                 <div class="panel-footer">
-                    <span class="pull-left">View Details</span>
+                    <span class="pull-left">ユーザー一覧</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
@@ -131,13 +114,13 @@
                             $category_count = mysqli_num_rows($select_all_categories);
                             echo "<div class='huge'>{$category_count}</div>";
                         ?>
-                        <div>Categories</div>
+                        <div>カテゴリー</div>
                     </div>
                 </div>
             </div>
             <a href="categories.php">
                 <div class="panel-footer">
-                    <span class="pull-left">View Details</span>
+                    <span class="pull-left">カテゴリー一覧</span>
                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                     <div class="clearfix"></div>
                 </div>
@@ -145,7 +128,7 @@
         </div>
     </div>
 </div>
-                <!-- /.row -->
+
 <?php
 
 $query = "SELECT * FROM posts WHERE post_status = 'published'";
@@ -172,9 +155,9 @@ $subscriber_count = mysqli_num_rows($select_all_subscribers);
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Date', 'Count'],
+            ['項目', '数'],
             <?php
-            $element_text = ['All Post', 'Active Posts', 'Draft Posts', 'Comments', '未承認Comments', 'Users', 'Subscribers', 'Categories'];
+            $element_text = ['全投稿', '公開投稿', '下書き', '全コメント', '非表示コメント', '全ユーザー', '非ADMINユーザー', 'カテゴリー'];
             $element_count = [$post_count, $post_published_count, $post_draft_count, $comment_count, $unapproved_comment_count, $user_count, $subscriber_count, $category_count];
             $number_of_element = count($element_text);
             for($i=0; $i<$number_of_element; $i++) {
@@ -185,8 +168,8 @@ $subscriber_count = mysqli_num_rows($select_all_subscribers);
 
         var options = {
             chart: {
-                title: 'Company Performance',
-                subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                title: '各種状態グラフ',
+                subtitle: '投稿やコメント、ユーザー状況が一目でわかりますが、あまり意味がありません。',
             }
         };
 
@@ -196,6 +179,7 @@ $subscriber_count = mysqli_num_rows($select_all_subscribers);
     }
     </script>
     <div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
+
 </div>
 
             </div>

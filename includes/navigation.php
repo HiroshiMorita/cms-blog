@@ -28,17 +28,17 @@
                         echo "<li><a href='category.php?category=$cat_id'>{$cat_title}</a></li>";
                     }
                     ?>
-
-                    <li>
-                        <a href="registration.php">Registration</a>
-                    </li>
+                <li><a href='about.php'>自己紹介</a></li>
+                    <!-- <li>
+                        <a href="registration.php">ユーザー登録</a>
+                    </li> -->
                     <?php
-                    // if (session_status() === PHP_SESSION_NONE) session_start();
-                    if(isset($_SESSION['user_role'])) {
-                        echo "<li><a href='admin'>Admin</a></li>";
+
+                    if($_SESSION['user_role'] == 'admin') {
+                        // echo "<li><a href='admin'>Admin</a></li>";
                         if(isset($_GET['p_id'])) {
                             $the_post_id = $_GET['p_id'];
-                            echo "<li><a href='admin/posts.php?source=edit_post&p_id={$the_post_id}'>Edit Post</a></li>";
+                            echo "<li><a href='admin/posts.php?source=edit_post&p_id={$the_post_id}'>記事編集</a></li>";
                         }
                     }
                     ?>
@@ -47,8 +47,6 @@
 
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 <div class="bg">

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Brain Log</title>
+    <title>BrainLog</title>
 
     <link href="admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
     <!-- ログイン -->
 <?php
-    if(isset($_SESSION['user_role'])) {
+    if($_SESSION['user_role'] == 'admin') {
         echo "<div class='session'></div>";
     }
 ?>

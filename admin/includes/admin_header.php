@@ -19,7 +19,7 @@ if(!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>管理者の部屋</title>
+    <title>管理画面</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/sb-admin.css" rel="stylesheet">
