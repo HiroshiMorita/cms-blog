@@ -9,7 +9,7 @@
                 </button>
                 <a class="navbar-brand" href="index.php">管理画面</a>
             </div>
-            <!-- Top Menu Items -->
+
             <ul class="nav navbar-right top-nav">
                 <li><a href="../index.php">ブログ画面へ</a></li>
 
@@ -34,7 +34,6 @@
             </ul>
 
 
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
@@ -73,7 +72,4 @@
                 </li>
                 </ul>
             </div>
-
-
-            <!-- /.navbar-collapse -->
         </nav>

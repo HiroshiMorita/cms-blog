@@ -104,7 +104,7 @@ if(isset($_GET['p_id'])){
 
   <!-- <div class="form-group">
     <label for="post_status">Post Status</label>
-    <input type="text" value="<?php echo $post_status ?>" class="form-control" name="post_status">
+    <input type="text" value="<?php echo $post_status ?>
   </div> -->
 
   <div class="form-group">

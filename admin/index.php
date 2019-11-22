@@ -180,11 +180,7 @@ $subscriber_count = mysqli_num_rows($select_all_subscribers);
     </script>
     <div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
 
-</div>
-
+                </div>
             </div>
-            <!-- /.container-fluid -->
-
         </div>
-        <!-- /#page-wrapper -->
 <?php include "includes/admin_footer.php" ?>

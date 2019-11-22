@@ -96,7 +96,7 @@ if(isset($_POST['create_comment'])) {
 
 
 
-<!-- Posted Comments -->
+<!-- 投稿済みコメント -->
 <?php
 $query = "SELECT * FROM comments WHERE comment_post_id = {$the_post_id} ";
 $query .= "AND comment_status = 'approved' ";
@@ -111,7 +111,6 @@ while ($row = mysqli_fetch_array($select_comment_query)) {
     $comment_author = $row['comment_author'];
     ?>
 
-        <!-- Comment -->
         <div class="media">
             <a class="pull-left" href="#">
                 <img class="media-object" src="http://placehold.it/64x64" alt="">

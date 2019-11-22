@@ -1,6 +1,5 @@
 <?php
 if(isset($_POST['create_user'])) {
-  // $user_id = $_POST['user_id'];
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'];
   $user_role = $_POST['user_role'];
@@ -10,7 +9,6 @@ if(isset($_POST['create_user'])) {
   $user_email = $_POST['user_email'];
   $password = $_POST['password'];
   // $post_date = date('d-m-y');
-  // $post_comment_count = 4;
   // move_uploaded_file($post_image_temp, "../images/$post_image");
 
   $query = "INSERT INTO users(firstname, lastname, user_role, username, user_email, password)";
