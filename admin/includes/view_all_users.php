@@ -2,15 +2,15 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Username</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
-      <th>Role</th>
-      <th>Admin</th>
-      <th>Subscriber</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <th>ユーザー名</th>
+      <th>姓</th>
+      <th>名</th>
+      <th>メールアドレス</th>
+      <th>役割</th>
+      <th>管理者化</th>
+      <th>非管理者化</th>
+      <th>編集</th>
+      <th>削除</th>
     </tr>
   </thead>
   <tbody>
@@ -84,10 +84,10 @@ if(isset($_GET['delete'])) {
 
 
 
-    echo "<td><a href='users.php?change_to_admin={$user_id}'>Admin</a></td>";
-    echo "<td><a href='users.php?change_to_sub={$user_id}'>Subscriber</a></td>";
-    echo "<td><a href='users.php?source=edit_user&edit_user={$user_id}'>Edit</a></td>";
-    echo "<td><a onClick=\"javascript: return confirm('削除しますか？'); \" href='users.php?delete={$user_id}'>Delete</a></td>";
+    echo "<td><a href='users.php?change_to_admin={$user_id}'>管理者化</a></td>";
+    echo "<td><a href='users.php?change_to_sub={$user_id}'>非管理者化</a></td>";
+    echo "<td><a href='users.php?source=edit_user&edit_user={$user_id}'>編集</a></td>";
+    echo "<td><a onClick=\"javascript: return confirm('削除しますか？'); \" href='users.php?delete={$user_id}'>削除</a></td>";
     echo "</tr>";
   }
 ?>

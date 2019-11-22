@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-lg-12"></div>
                         <h3 class="page-header">
-                            Dashboard
+                            ダッシュボード
                             <small><?php echo $_SESSION['username'] ?>さん</small>
                         </h3>
                     </div>

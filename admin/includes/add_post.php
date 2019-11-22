@@ -25,12 +25,12 @@ if(isset($_POST['create_post'])) {
 <form action="" method="post" enctype="multipart/form-data">
 
   <div class="form-group">
-    <label for="post_title">Post Title</label>
+    <label for="post_title">タイトル</label>
     <input type="text" class="form-control" name="post_title">
   </div>
 
   <div class="form-group">
-  <label for="post_category">Post Category</label>
+  <label for="post_category">カテゴリー</label>
   <br>
     <select name="post_category" id="">
       <?php
@@ -48,31 +48,31 @@ if(isset($_POST['create_post'])) {
 
 
   <div class="form-group">
-    <label for="post_author">Post Author</label>
+    <label for="post_author">投稿者</label>
     <input type="text" class="form-control" name="post_author">
   </div>
 
   <div class="form-group">
-    <label for="post_status">Post Status</label><br>
+    <label for="post_status">状態</label><br>
     <select name="post_status" id="">
-      <option value="draft">Draft</option>
-      <option value="published">Published</option>
+      <option value="draft">下書き</option>
+      <option value="published">公開</option>
 
     </select>
   </div>
 
   <div class="form-group">
-    <label for="post_image">Post Image</label>
+    <label for="post_image">タイトル画像</label>
     <input type="file" name="post_image">
   </div>
 
   <div class="form-group">
-    <label for="post_tags">Post Tags</label>
+    <label for="post_tags">検索タグ</label>
     <input type="text" class="form-control" name="post_tags">
   </div>
 
   <div class="form-group">
-    <label for="post_content">Post Content</label>
+    <label for="post_content">本文</label>
     <textarea class="form-control" name="post_content" id="body" cols="30" rows="10">
     </textarea>
   </div>

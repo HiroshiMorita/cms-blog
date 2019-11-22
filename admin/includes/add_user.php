@@ -26,21 +26,21 @@ if(isset($_POST['create_user'])) {
 <form action="" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
-    <label for="firstname">Firstname</label>
+    <label for="firstname">姓</label>
     <input type="text" class="form-control" name="firstname">
   </div>
 
   <div class="form-group">
-    <label for="lastname">Lastname</label>
+    <label for="lastname">名</label>
     <input type="text" class="form-control" name="lastname">
   </div>
 
   <div class="form-group">
-  <label for="user_role">User role</label>
+  <label for="user_role">役割</label>
   <br>
     <select name="user_role" id="">
-      <option value="subscriber">Subscriber</option>
-      <option value="admin">Admin</option>
+      <option value="subscriber">非管理者</option>
+      <option value="admin">管理者</option>
     </select>
   </div>
 
@@ -51,17 +51,17 @@ if(isset($_POST['create_user'])) {
   </div> -->
 
   <div class="form-group">
-    <label for="username">Username</label>
+    <label for="username">ユーザー名</label>
     <input type="text" class="form-control" name="username">
   </div>
 
   <div class="form-group">
-    <label for="email">Email</label>
+    <label for="email">メールアドレス</label>
     <input type="email" class="form-control" name="user_email">
   </div>
 
   <div class="form-group">
-    <label for="password">Password</label>
+    <label for="password">パスワード</label>
     <input type="password" class="form-control" name="password">
   </div>
 

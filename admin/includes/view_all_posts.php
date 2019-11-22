@@ -26,31 +26,31 @@ if(isset($_POST['checkBoxArray'])) {
 <table class="table table-bordered table-hover">
   <div id="bulkOptionsContainer" class="col-xs-4">
     <select class="form-control" name="bulk_options" id="">
-      <option value="">Select Options</option>
-      <option value="published">Publish</option>
-      <option value="draft">Draft</option>
-      <option value="delete">Delete</option>
+      <option value="">記事の状態を変更します</option>
+      <option value="published">公開</option>
+      <option value="draft">下書き</option>
+      <option value="delete">削除</option>
     </select>
   </div>
   <div class="col-xs-4">
-  <input type="submit" name="submit" class="btn btn-success" value="Apply">
-  <a class="btn btn-primary" href="posts.php?source=add_post">Add New</a>
+  <input type="submit" name="submit" class="btn btn-success" value="適用">
+  <a class="btn btn-primary" href="posts.php?source=add_post">新規投稿</a>
   </div>
   <thead>
     <tr>
       <th><input id="selectAllBoxes" type="checkbox"></th>
       <th>ID</th>
-      <th>Author</th>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Status</th>
-      <th>Image</th>
-      <th>Tags</th>
-      <th>Comments</th>
-      <th>Date</th>
-      <th>View Post</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <th>投稿者</th>
+      <th>タイトル</th>
+      <th>カテゴリー</th>
+      <th>ステータス</th>
+      <th>画像</th>
+      <th>検索タグ</th>
+      <th>コメント数</th>
+      <th>投稿日</th>
+      <th>閲覧</th>
+      <th>編集</th>
+      <th>削除</th>
 
     </tr>
   </thead>
@@ -103,9 +103,9 @@ if(isset($_GET['delete'])) {
     echo "<td>$post_tags</td>";
     echo "<td>$post_comment_count</td>";
     echo "<td>$post_date</td>";
-    echo "<td><a href='../post.php?p_id={$post_id}'>View Post</a></td>";
-    echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
-    echo "<td><a onClick=\"javascript: return confirm('削除しますか？'); \" href='posts.php?delete={$post_id}'>Delete</a></td>";
+    echo "<td><a href='../post.php?p_id={$post_id}'>閲覧</a></td>";
+    echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>編集</a></td>";
+    echo "<td><a onClick=\"javascript: return confirm('削除しますか？'); \" href='posts.php?delete={$post_id}'>削除</a></td>";
     echo "</tr>";
   }
 ?>

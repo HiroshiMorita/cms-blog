@@ -13,18 +13,17 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Welcome to admin
-                            <small>Author</small>
+                            カテゴリー
                         </h1>
                         <div class="col-xs-6">
 <?php insert_categories() ?>
                           <form action="" method="post">
                             <div class="form-group">
-                              <label for="cat-title"> Add Category</label>
+                              <label for="cat-title"> カテゴリーを追加</label>
                               <input type="text" class="form-control" name="cat_title">
                             </div>
                             <div class="form-group">
-                              <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
+                              <input class="btn btn-primary" type="submit" name="submit" value="追加">
                             </div>
                           </form>
 
@@ -42,7 +41,9 @@ include "includes/update_categories.php";
                             <thead>
                               <tr>
                                 <th>ID</th>
-                                <th>Category Title</th>
+                                <th>カテゴリー名</th>
+                                <th>削除</th>
+                                <th>編集</th>
                               </tr>
                             </thead>
                             <tbody>

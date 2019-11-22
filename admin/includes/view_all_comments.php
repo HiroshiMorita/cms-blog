@@ -2,15 +2,15 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Author</th>
-      <th>Comment</th>
-      <th>Email</th>
-      <th>Status</th>
-      <th>In Response to</th>
-      <th>Date</th>
-      <th>Approve</th>
-      <th>Unapprove</th>
-      <th>Delete</th>
+      <th>投稿者</th>
+      <th>コメント</th>
+      <th>メールアドレス</th>
+      <th>状態</th>
+      <th>記事名</th>
+      <th>投稿日</th>
+      <th>表示する</th>
+      <th>非表示にする</th>
+      <th>削除</th>
     </tr>
   </thead>
   <tbody>
@@ -84,9 +84,9 @@ if(isset($_GET['delete'])) {
 
 
     echo "<td>$comment_date</td>";
-    echo "<td><a href='comments.php?approve=$comment_id'>Approve</a></td>";
-    echo "<td><a href='comments.php?unapprove=$comment_id'>Unapprove</a></td>";
-    echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";
+    echo "<td><a href='comments.php?approve=$comment_id'>表示する</a></td>";
+    echo "<td><a href='comments.php?unapprove=$comment_id'>非表示にする</a></td>";
+    echo "<td><a href='comments.php?delete=$comment_id'>削除</a></td>";
     echo "</tr>";
   }
 ?>

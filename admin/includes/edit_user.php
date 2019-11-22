@@ -62,17 +62,17 @@ if(isset($_POST['edit_user'])) {
 <form action="" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
-    <label for="firstname">Firstname</label>
+    <label for="firstname">姓</label>
     <input type="text" value="<?php echo $firstname ?>" class="form-control" name="firstname">
   </div>
 
   <div class="form-group">
-    <label for="lastname">Lastname</label>
+    <label for="lastname">名</label>
     <input type="text" value="<?php echo $lastname ?>" class="form-control" name="lastname">
   </div>
 
   <div class="form-group">
-  <label for="user_role">User role</label>
+  <label for="user_role">役割</label>
   <br>
     <select name="user_role" id="">
     <option value="<?php echo $user_role ?>"><?php echo $user_role ?></option>
@@ -94,17 +94,17 @@ if(isset($_POST['edit_user'])) {
   </div> -->
 
   <div class="form-group">
-    <label for="username">Username</label>
+    <label for="username">ユーザー名</label>
     <input type="text" value="<?php echo $username ?>" class="form-control" name="username">
   </div>
 
   <div class="form-group">
-    <label for="email">Email</label>
+    <label for="email">メールアドレス</label>
     <input type="email" value="<?php echo $user_email ?>" class="form-control" name="user_email">
   </div>
 
   <div class="form-group">
-    <label for="password">Password</label>
+    <label for="password">パスワード</label>
     <input type="password" value="<?php echo $password ?>" class="form-control" name="password">
   </div>
 

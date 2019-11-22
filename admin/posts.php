@@ -14,8 +14,7 @@
                     <div class="col-lg-12"></div>
 
                     <h1 class="page-header">
-                            Welcome to admin
-                            <small>Author</small>
+                            投稿管理
                         </h1>
 
 <?php
