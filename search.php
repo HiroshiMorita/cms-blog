@@ -12,7 +12,7 @@
                 if(isset($_POST['submit'])){
                     $search = $_POST['search'];
                     //$queryに検索方法を代入
-                    $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%' OR post_content LIKE '%$search%'";
+                    $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search%' OR post_content LIKE '%$search%' OR post_title LIKE '%$search%'";
                     //$queryの検索方法を使って実際にデータベース検索
                     $search_query = mysqli_query($connection, $query);
                     if(!$search_query) {
