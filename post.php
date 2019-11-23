@@ -30,7 +30,7 @@
                 <h3>
                     <a href="post.php?p_id=<?php echo $post_id ?>"><?php echo $post_title ?></a>
                 </h3>
-                    <i class="fa fa-user"></i> <a href="index.php"><?php echo $post_author ?>&emsp;</a>
+                    <i class="fa fa-user"></i> <a href="author_posts.php?author=<?php echo $post_author ?>&p_id=<?php echo $post_id ?>"><?php echo $post_author ?></a>&emsp;
                 <span class="glyphicon glyphicon-time"></span><?php echo $post_date ?><br><br>
                 <a href="post.php?p_id=<?php echo $post_id ?>">
                 <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">

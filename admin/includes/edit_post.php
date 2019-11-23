@@ -93,9 +93,9 @@ if(isset($_GET['p_id'])){
     <option value='<?php echo $post_status ?>'><?php echo $post_status ?></option>
     <?php
     if($post_status == 'published') {
-      echo "<option value='draft'>Draft</option>";
+      echo "<option value='draft'>下書き</option>";
     } else {
-      echo "<option value='published'>Publish</option>";
+      echo "<option value='published'>公開</option>";
     }
     ?>
 

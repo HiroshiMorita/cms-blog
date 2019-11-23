@@ -3,37 +3,43 @@
 <?php include "includes/navigation.php" ?>
 
     <div class="container">
+
         <div class="row">
+
+aaaaaaaaa
             <div class="col-md-8">
                 <?php
-                $query = "SELECT * FROM posts ORDER BY post_id DESC";
+
+                if(isset($_GET['p_id'])){
+                    $the_post_id = $_GET['p_id'];
+                    $the_post_author = $_GET['author'];
+                }
+
+                $query = "SELECT * FROM posts WHERE post_author = '{$the_post_author}' ORDER BY post_id DESC";
                 $select_all_posts_query = mysqli_query($connection, $query);
-                //postsの登録数全て繰り返し
+                //postsの中の数だけ繰り返す
                 while($row = mysqli_fetch_assoc($select_all_posts_query)) {
                     $post_id = $row['post_id'];
                     $post_title = $row['post_title'];
                     $post_author = $row['post_author'];
                     $post_date = $row['post_date'];
                     $post_image = $row['post_image'];
-                    $post_content = substr($row['post_content'],0,49)."...";
-                    $post_status = $row['post_status'];
-                    if($post_status == 'published') {
+                    $post_content = $row['post_content'];
                 ?>
 
                 <!-- 表示部分 -->
                 <h3>
                     <a href="post.php?p_id=<?php echo $post_id ?>"><?php echo $post_title ?></a>
                 </h3>
-                    <i class="fa fa-user"></i> <a href="author_posts.php?author=<?php echo $post_author ?>&p_id=<?php echo $post_id ?>"><?php echo $post_author ?></a>
-                    &emsp;<span class="glyphicon glyphicon-time"></span><?php echo $post_date ?><br><br>
+                    <i class="fa fa-user"></i> <a href="#"><?php echo $post_author ?></a>&emsp;
+                <span class="glyphicon glyphicon-time"></span><?php echo $post_date ?><br><br>
                 <a href="post.php?p_id=<?php echo $post_id ?>">
                 <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
                 </a>
                 <p><?php echo $post_content ?></p>
-                <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                 <hr>
 
-                <?php }} ?>
+                <?php } ?>
 
                 <!-- ページネーション -->
                 <ul class="pager">
