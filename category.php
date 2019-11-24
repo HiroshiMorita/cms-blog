@@ -36,7 +36,7 @@
                     $post_author = $row['post_author'];
                     $post_date = $row['post_date'];
                     $post_image = $row['post_image'];
-                    $post_content = substr($row['post_content'],0,49)."...";
+                    $post_content = mb_substr($row['post_content'],0,60)."...";
                 ?>
 
                 <!-- 表示部分 -->
@@ -48,7 +48,8 @@
                 <a href="post.php?p_id=<?php echo $post_id ?>">
                 <img class="img-responsive" src="images/<?php echo $post_image ?>" alt="">
                 </a>
-                <p><?php echo $post_content ?></p>
+                <?php $display_post_content = strip_tags($post_content); ?>
+                <p><?php echo $display_post_content ?></p>
                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                 <hr>
 
