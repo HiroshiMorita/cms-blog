@@ -53,6 +53,7 @@
                 <?php }} ?>
 
                 <!-- ページネーション -->
+                <!-- ページ多すぎたらスクロールするようにしたい -->
                 <ul class="pager">
                     <?php
                         for($i = 1; $i <= $count; $i++) {
@@ -64,10 +65,22 @@
                         }
                     ?>
                     <li class="previous">
-                        <a href="#">&larr; 前のページ</a>
+                        <?php
+                        if ($page <= 1) {
+                        } else {
+                            $previous_page = $page - 1;
+                            echo "<a href='index.php?page={$previous_page}'>&larr; 前のページ</a>";
+                        }
+                        ?>
                     </li>
                     <li class="next">
-                        <a href="#">次のページ &rarr;</a>
+                        <?php
+                        if ($page >= $count) {
+                        } else {
+                            $next_page = $page + 1;
+                            echo "<a href='index.php?page={$next_page}'>次のページ &rarr;</a>";
+                        }
+                        ?>
                     </li>
                 </ul>
 
