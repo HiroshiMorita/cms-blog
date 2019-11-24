@@ -14,7 +14,7 @@
                     <div class="col-lg-12"></div>
 
                     <h1 class="page-header">
-                            ユーザー管理
+                            ユーザー
                         </h1>
 
 <?php

@@ -7,12 +7,27 @@
 
             <div class="col-md-8">
                 <?php
-
+                //1ページあたりの表示記事数
+                $per_page = 5;
+                //ページネーションのページ判定
                 if(isset($_GET['category'])) {
                     $post_category_id = $_GET['category'];
+                    if(isset($_GET['page'])) {
+                        $page = $_GET['page'];
+                    } else {
+                        $page = 1;
+                    }
                 }
+                //ページネーション配列スタート位置定義
+                $page_1 = ($page * $per_page) - $per_page;
 
-                $query = "SELECT * FROM posts WHERE post_category_id = $post_category_id ORDER BY post_id DESC";
+                $post_query_count = "SELECT * FROM posts WHERE post_category_id = $post_category_id";
+                $find_count = mysqli_query($connection,$post_query_count);
+                $count = mysqli_num_rows($find_count);
+                //1ページに表示する数で割ったとき小数点以下切り上げてページ数としている
+                $count = ceil($count / $per_page);
+
+                $query = "SELECT * FROM posts WHERE post_category_id = $post_category_id ORDER BY post_id DESC LIMIT $page_1, $per_page";
                 $select_all_posts_query = mysqli_query($connection, $query);
                 //postsの中の数だけ繰り返す
                 while($row = mysqli_fetch_assoc($select_all_posts_query)) {
@@ -41,11 +56,32 @@
 
                 <!-- ページネーション -->
                 <ul class="pager">
+                    <?php
+                        for($i = 1; $i <= $count; $i++) {
+                            if($i == $page) {
+                                echo "<li><a href='category.php?category={$post_category_id}&page={$i}' class='active_link'>{$i}</a></li>";
+                            } else {
+                            echo "<li><a href='category.php?category={$post_category_id}&page={$i}'>{$i}</a></li>";
+                        }
+                        }
+                    ?>
                     <li class="previous">
-                        <a href="#">&larr; Older</a>
+                        <?php
+                        if ($page <= 1) {
+                        } else {
+                            $previous_page = $page - 1;
+                            echo "<a href='category.php?category={$post_category_id}&page={$previous_page}'>&larr; 前のページ</a>";
+                        }
+                        ?>
                     </li>
                     <li class="next">
-                        <a href="#">Newer &rarr;</a>
+                        <?php
+                        if ($page >= $count) {
+                        } else {
+                            $next_page = $page + 1;
+                            echo "<a href='category.php?category={$post_category_id}&page={$next_page}'>次のページ &rarr;</a>";
+                        }
+                        ?>
                     </li>
                 </ul>
 

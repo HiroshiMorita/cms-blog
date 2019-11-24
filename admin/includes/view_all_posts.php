@@ -126,7 +126,15 @@ if(isset($_GET['delete'])) {
     echo "<td>$post_tags</td>";
     echo "<td>$post_date</td>";
     echo "<td>{$post_views_count}</td>";
-    echo "<td>$post_comment_count</td>";
+
+    $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+    $send_comment_query = mysqli_query($connection, $query);
+    $row = mysqli_fetch_array($send_comment_query);
+    $comment_id = $row['comment_id'];
+    $count_comments = mysqli_num_rows($send_comment_query);
+
+    echo "<td><a href='post_comments.php?id=$post_id'>$count_comments</a></td>";
+
     echo "<td><a href='../post.php?p_id={$post_id}'>閲覧</a></td>";
     echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>編集</a></td>";
     echo "<td><a onClick=\"javascript: return confirm('削除しますか？'); \" href='posts.php?delete={$post_id}'>削除</a></td>";

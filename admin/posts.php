@@ -12,7 +12,7 @@
                     <div class="col-lg-12"></div>
 
                     <h1 class="page-header">
-                            投稿管理
+                            投稿
                         </h1>
 
 <?php
