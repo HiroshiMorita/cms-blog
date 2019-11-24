@@ -67,8 +67,9 @@ if(isset($_POST['checkBoxArray'])) {
       <th>ステータス</th>
       <th>画像</th>
       <th>検索タグ</th>
-      <th>コメント数</th>
       <th>投稿日</th>
+      <th>アクセス数</th>
+      <th>コメント数</th>
       <th>閲覧</th>
       <th>編集</th>
       <th>削除</th>
@@ -101,6 +102,7 @@ if(isset($_GET['delete'])) {
     $post_tags = $row['post_tags'];
     $post_comment_count = $row['post_comment_count'];
     $post_date = $row['post_date'];
+    $post_views_count = $row['post_views_count'];
     echo "<tr>";
     ?>
     <td><input class='checkBoxes' type='checkbox' name='checkBoxArray[]' value='<?php echo $post_id ?>'></td>
@@ -122,8 +124,9 @@ if(isset($_GET['delete'])) {
     echo "<td>$post_status</td>";
     echo "<td><img src='../images/$post_image' alt='image' width='100'></td>";
     echo "<td>$post_tags</td>";
-    echo "<td>$post_comment_count</td>";
     echo "<td>$post_date</td>";
+    echo "<td>{$post_views_count}</td>";
+    echo "<td>$post_comment_count</td>";
     echo "<td><a href='../post.php?p_id={$post_id}'>閲覧</a></td>";
     echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>編集</a></td>";
     echo "<td><a onClick=\"javascript: return confirm('削除しますか？'); \" href='posts.php?delete={$post_id}'>削除</a></td>";
