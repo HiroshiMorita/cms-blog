@@ -6,7 +6,24 @@
         <div class="row">
             <div class="col-md-8">
                 <?php
-                $query = "SELECT * FROM posts ORDER BY post_id DESC";
+                //1ページに表示する数を定義
+                $per_page = 5;
+                //ページネーションのページ判定
+                if(isset($_GET['page'])) {
+                    $page = $_GET['page'];
+                } else {
+                    $page = 1;
+                }
+                //ページネーション配列スタート位置定義
+                $page_1 = ($page * $per_page) - $per_page;
+
+                $post_query_count = "SELECT * FROM posts";
+                $find_count = mysqli_query($connection,$post_query_count);
+                $count = mysqli_num_rows($find_count);
+                //1ページに表示する数で割ったとき小数点以下切り上げてページ数としている
+                $count = ceil($count / $per_page);
+
+                $query = "SELECT * FROM posts ORDER BY post_id DESC LIMIT $page_1, $per_page";
                 $select_all_posts_query = mysqli_query($connection, $query);
                 //postsの登録数全て繰り返し
                 while($row = mysqli_fetch_assoc($select_all_posts_query)) {
@@ -37,11 +54,20 @@
 
                 <!-- ページネーション -->
                 <ul class="pager">
+                    <?php
+                        for($i = 1; $i <= $count; $i++) {
+                            if($i == $page) {
+                                echo "<li><a href='index.php?page={$i}' class='active_link'>{$i}</a></li>";
+                            } else {
+                            echo "<li><a href='index.php?page={$i}'>{$i}</a></li>";
+                        }
+                        }
+                    ?>
                     <li class="previous">
-                        <a href="#">&larr; Older</a>
+                        <a href="#">&larr; 前のページ</a>
                     </li>
                     <li class="next">
-                        <a href="#">Newer &rarr;</a>
+                        <a href="#">次のページ &rarr;</a>
                     </li>
                 </ul>
 
