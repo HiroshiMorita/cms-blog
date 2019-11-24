@@ -12,7 +12,13 @@
 
                 if(isset($_GET['p_id'])){
                     $the_post_id = $_GET['p_id'];
-                }
+
+                    $view_query = "UPDATE posts SET post_views_count = post_views_count + 1 WHERE post_id = $the_post_id";
+                    $send_query = mysqli_query($connection, $view_query);
+
+                    if(!$send_query) {
+                        die("query failed");
+                    }
 
                 $query = "SELECT * FROM posts WHERE post_id = $the_post_id";
                 $select_all_posts_query = mysqli_query($connection, $query);
@@ -38,7 +44,11 @@
                 <p><?php echo $post_content ?></p>
                 <hr>
 
-                <?php } ?>
+                <?php }
+            } else {
+                header("Location: index.php");
+            }
+            ?>
 
 
 
@@ -113,7 +123,7 @@ while ($row = mysqli_fetch_array($select_comment_query)) {
 
         <div class="media">
             <a class="pull-left" href="#">
-                <img class="media-object" src="http://placehold.it/64x64" alt="">
+                <img class="media-object" src="http://design-ec.com/d/e_others_50/l_e_others_501.png" alt="" width="64px">
             </a>
             <div class="media-body">
                 <h4 class="media-heading"><?php echo $comment_author ?>
