@@ -72,7 +72,8 @@ if(isset($_GET['delete'])) {
 
 
     echo "<td>$comment_email</td>";
-    echo "<td>$comment_status</td>";
+    if($comment_status == "approved") {echo "<td>表示</td>";}
+    else {echo "<td>非表示</td>";}
 
     $query = "SELECT * FROM posts WHERE post_id = $comment_post_id";
     $select_post_id_query = mysqli_query($connection, $query);

@@ -63,12 +63,12 @@ if(isset($_GET['p_id'])){
 <form action="" method="post" enctype="multipart/form-data">
 
   <div class="form-group">
-    <label for="post_title">Post Title</label>
+    <label for="post_title">タイトル</label>
     <input type="text" value="<?php echo $post_title ?>" class="form-control" name="post_title">
   </div>
 
   <div class="form-group">
-  <label for="post_category">Post Category</label>
+  <label for="post_category">カテゴリー</label>
   <br>
     <select name="post_category" id="">
       <?php
@@ -85,21 +85,23 @@ if(isset($_GET['p_id'])){
   </div>
 
   <div class="form-group">
-    <label for="post_author">Post Author</label>
+    <label for="post_author">投稿者</label>
     <input type="text" value="<?php echo $post_author ?>" class="form-control" name="post_author">
   </div>
   <div class="form-group">
-  <select name="post_status" id="">
-    <option value='<?php echo $post_status ?>'><?php echo $post_status ?></option>
-    <?php
-    if($post_status == 'published') {
-      echo "<option value='draft'>下書き</option>";
-    } else {
-      echo "<option value='published'>公開</option>";
-    }
-    ?>
+    <label for="post_status">状態</label><br>
+    <select name="post_status" id="">
+      <?php
+        if($post_status == 'published') {
+          echo "<option value='published'>公開</option>";
+          echo "<option value='draft'>下書き</option>";
+        } else {
+          echo "<option value='published'>公開</option>";
+          echo "<option value='draft'>下書き</option>";
+        }
+      ?>
 
-  </select>
+    </select>
   </div>
 
   <!-- <div class="form-group">
@@ -108,18 +110,18 @@ if(isset($_GET['p_id'])){
   </div> -->
 
   <div class="form-group">
-    <label for="post_image">Post Image</label><br>
+    <label for="post_image">タイトル画像</label><br>
     <img src="../images/<?php echo $post_image ?>" width="100">
     <input type="file" name="post_image">
   </div>
 
   <div class="form-group">
-    <label for="post_tags">Post Tags</label>
+    <label for="post_tags">検索タグ</label>
     <input type="text" value="<?php echo $post_tags ?>" class="form-control" name="post_tags">
   </div>
 
   <div class="form-group">
-    <label for="post_content">Post Content</label>
+    <label for="post_content">本文</label>
     <textarea class="form-control" name="post_content" id="body" cols="30" rows="10"><?php echo $post_content ?></textarea>
   </div>
 

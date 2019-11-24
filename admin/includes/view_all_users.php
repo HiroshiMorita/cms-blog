@@ -61,7 +61,8 @@ if(isset($_GET['delete'])) {
     echo "<td>$firstname</td>";
     echo "<td>$lastname</td>";
     echo "<td>$user_email</td>";
-    echo "<td>$user_role</td>";
+    if($user_role == "admin") {echo "<td>管理者</td>";}
+    else {echo "<td>非管理者</td>";}
     echo "<td><a href='users.php?change_to_admin={$user_id}'>管理者化</a></td>";
     echo "<td><a href='users.php?change_to_sub={$user_id}'>非管理者化</a></td>";
     echo "<td><a href='users.php?source=edit_user&edit_user={$user_id}'>編集</a></td>";

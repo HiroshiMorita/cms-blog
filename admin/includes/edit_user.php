@@ -75,14 +75,15 @@ if(isset($_POST['edit_user'])) {
   <label for="user_role">役割</label>
   <br>
     <select name="user_role" id="">
-    <option value="<?php echo $user_role ?>"><?php echo $user_role ?></option>
-    <?php
+  <?php
     if($user_role == 'admin') {
-      echo "<option value='subscriber'>subscriber</option>";
+      echo "<option value='admin'>管理者</option>";
+      echo "<option value='subscriber'>非管理者</option>";
     } else {
-      echo "<option value='admin'>admin</option>";
+      echo "<option value='subscriber'>非管理者</option>";
+      echo "<option value='admin'>管理者</option>";
     }
-    ?>
+  ?>
 
     </select>
   </div>

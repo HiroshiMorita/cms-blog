@@ -121,7 +121,8 @@ if(isset($_GET['delete'])) {
     echo "<td>$cat_title</td>";
       }
 
-    echo "<td>$post_status</td>";
+    if($post_status == "published") {echo "<td>公開</td>";}
+    else {echo "<td>下書き</td>";}
     echo "<td><img src='../images/$post_image' alt='image' width='100'></td>";
     echo "<td>$post_tags</td>";
     echo "<td>$post_date</td>";
