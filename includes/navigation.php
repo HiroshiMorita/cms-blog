@@ -25,7 +25,7 @@
                         echo "<li><a href='category.php?category=$cat_id'>{$cat_title}</a></li>";
                     }
                     ?>
-                <li><a href='introduction/'>自己紹介</a></li>
+                <li><a href='https://portfolio-m.s3-ap-northeast-1.amazonaws.com/index.html'>自己紹介</a></li>
 
                     <?php
 
