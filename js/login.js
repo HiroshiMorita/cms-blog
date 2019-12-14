@@ -27,7 +27,6 @@ $(function() {
       $('.bg').css('filter', 'blur(5px)');
     }
 
-
       //キー入力を初期化
       inputKey = [];
     }

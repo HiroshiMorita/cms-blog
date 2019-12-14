@@ -22,15 +22,13 @@ if(isset($_POST['login'])) {
     $db_lastname = $row['lastname'];
     $db_user_role = $row['user_role'];
 
-  $query = "SELECT randSalt FROM users";
-  $result_randsalt = mysqli_query($connection,$query);
-  $row = mysqli_fetch_array($result_randsalt);
-  $salt = $row['randSalt'];
-  $password = crypt($password, $salt);
+  // $query = "SELECT randSalt FROM users";
+  // $result_randsalt = mysqli_query($connection,$query);
+  // $row = mysqli_fetch_array($result_randsalt);
+  // $salt = $row['randSalt'];
+  // $password = crypt($password, $salt);
 
-  if($username !== $db_username && $password !== $db_password){
-    header("location: ../index.php");
-  } else if($username == $db_username && $password == $db_password){
+  if(password_verify($password,$db_password)) {
 
     $_SESSION['username'] = $db_username;
     $_SESSION['firstname'] = $db_firstname;
@@ -41,5 +39,21 @@ if(isset($_POST['login'])) {
   } else {
     header("Location: ../index.php");
   }
+
+
+  // if($username !== $db_username && $password !== $db_password){
+  //   header("location: ../index.php");
+  // } else if($username == $db_username && $password == $db_password){
+
+  //   $_SESSION['username'] = $db_username;
+  //   $_SESSION['firstname'] = $db_firstname;
+  //   $_SESSION['lastname'] = $db_lastname;
+  //   $_SESSION['user_role'] = $db_user_role;
+  //   header("Location: ../admin");
+
+  // } else {
+  //   header("Location: ../index.php");
+  // }
+
 }
 ?>
