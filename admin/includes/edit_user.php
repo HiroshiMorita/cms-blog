@@ -17,7 +17,10 @@ if(isset($_GET['edit_user'])) {
     $user_role = $row['user_role'];
   }
 
+} else {
+  header("Location: index.php");
 }
+
 if(isset($_POST['edit_user'])) {
   // $user_id = $_POST['user_id'];
   $firstname = $_POST['firstname'];
@@ -68,9 +71,6 @@ if(isset($_POST['edit_user'])) {
     confirmQuery($edit_user_query);
     // header("Location: users.php?source=edit_user&edit_user=$user_id");
     echo "<p class='bg-success'>ユーザー情報を更新しました。 <a href='users.php'>ユーザー管理画面へ</a></p>";
-
-
-
 
 }
 ?>

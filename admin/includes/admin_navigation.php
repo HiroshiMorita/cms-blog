@@ -23,7 +23,7 @@
                     <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="profile.php"><i class="fa fa-fw fa-user"></i>アカウント編集</a>
+                            <a href="users.php?source=edit_user&edit_user=<?php echo $_SESSION['user_id'] ?>"><i class="fa fa-fw fa-user"></i>アカウント編集</a>
                         </li>
                         <li class="divider"></li>
                         <li>

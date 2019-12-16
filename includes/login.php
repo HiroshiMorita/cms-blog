@@ -29,7 +29,7 @@ if(isset($_POST['login'])) {
   // $password = crypt($password, $salt);
 
   if(password_verify($password,$db_password)) {
-
+    $_SESSION['user_id'] = $db_user_id;
     $_SESSION['username'] = $db_username;
     $_SESSION['firstname'] = $db_firstname;
     $_SESSION['lastname'] = $db_lastname;

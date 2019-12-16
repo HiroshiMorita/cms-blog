@@ -13,9 +13,6 @@
                 <div class="row">
                     <div class="col-lg-12"></div>
 
-                    <h1 class="page-header">
-                            ユーザー
-                        </h1>
 
 <?php
 if(isset($_GET['source'])){
@@ -25,16 +22,24 @@ if(isset($_GET['source'])){
 }
 switch($source) {
     case 'add_user';
+    echo "<h1 class='page-header'>ユーザー新規登録</h1>";
     include "includes/add_user.php";
     break;
 
+    default:
+    echo "<h1 class='page-header'>ユーザー一覧</h1>";
+    include "includes/view_all_users.php";
+    break;
+
     case 'edit_user';
+    if(isset($_SESSION['user_id']) && $_GET['edit_user']==$_SESSION['user_id']) {
+        echo "<h1 class='page-header'>Myアカウント編集</h1>";
+    } else {
+        echo "<h1 class='page-header'>ユーザー編集</h1>";
+    }
     include "includes/edit_user.php";
     break;
 
-    default:
-    include "includes/view_all_users.php";
-    break;
 }
 ?>
 
