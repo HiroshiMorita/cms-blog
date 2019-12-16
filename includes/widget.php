@@ -1,4 +1,5 @@
-<div class="well">
+<div class="well" id="anime">
+        <span></span>
   <h4 style="color:red;">隠しコマンド  "admin"</h4>
   <p>「admin」と入力すると<br>管理画面へのログイン情報入力欄が開きます。</p>
   <p>ID:test<br>PW:123</p>
