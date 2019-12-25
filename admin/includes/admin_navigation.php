@@ -68,7 +68,7 @@
                         </ul>
                     </li>
                 <li>
-                    <a href="profile.php"><i class="fa fa-fw fa-wrench"></i> Myアカウント編集</a>
+                    <a href="users.php?source=edit_user&edit_user=<?php echo $_SESSION['user_id'] ?>"><i class="fa fa-fw fa-wrench"></i> Myアカウント編集</a>
                 </li>
                 </ul>
             </div>
